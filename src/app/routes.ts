@@ -7,6 +7,8 @@ import {SigninComponent} from './signin/signin.component';
 import {SignupComponent} from './signup/signup.component';
 import {UrlShortenerComponent} from './url-shortener/url-shortener.component';
 import { AuthResolverService } from './auth-resolver.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LinkExpiredComponent } from './link-expired/link-expired.component';
 
 export const appRoutes: Routes = [
   {
@@ -21,6 +23,12 @@ export const appRoutes: Routes = [
     resolve: {
       user: AuthResolverService
     }
+  }, {
+    path : 'dashboard',
+    component : DashboardComponent
+  }, {
+    path : 'expired',
+    component : LinkExpiredComponent
   },
   {
     path : '',

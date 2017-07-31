@@ -21,12 +21,11 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, './../../dist')));
-app.use(express.static(path.join(__dirname, './../../node_modules')));
 
 app.use(sessionMiddleware);
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(ddos.express);
+// app.use(ddos.express);
 app.use(helmet());
 
 glob("server/**/*.routes.js", function (err, files) {

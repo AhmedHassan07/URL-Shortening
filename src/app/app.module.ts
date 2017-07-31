@@ -15,6 +15,8 @@ import { UrlShortenerService } from './url-shortener.service';
 import { AuthResolverService } from './auth-resolver.service';
 import { UrlShortenerComponent } from './url-shortener/url-shortener.component';
 import { MyDatePickerModule } from 'mydatepicker';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LinkExpiredComponent } from './link-expired/link-expired.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { MyDatePickerModule } from 'mydatepicker';
     HeaderComponent,
     SigninComponent,
     SignupComponent,
-    UrlShortenerComponent
+    UrlShortenerComponent,
+    DashboardComponent,
+    LinkExpiredComponent
   ],
   imports: [
     BrowserModule,

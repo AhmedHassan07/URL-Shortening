@@ -26,9 +26,9 @@ const redirectPage = (req, res) => {
     .then((data) => {
       return res.redirect(data);
     }).catch(StandardError, (err) => {
-      return res.redirect('/');
+      return res.render(path.join(__dirname, '../../../dist/index.html'));
     }).catch((err) => {
-      return res.redirect('/');
+      return res.sendFile(path.join(__dirname, '../../../dist/index.html'));
     });
 
 }
