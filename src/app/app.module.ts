@@ -11,9 +11,10 @@ import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { appRoutes } from './routes';
 import { UsersService } from './users.service';
+import { UrlShortenerService } from './url-shortener.service';
 import { AuthResolverService } from './auth-resolver.service';
 import { UrlShortenerComponent } from './url-shortener/url-shortener.component';
-
+import { MyDatePickerModule } from 'mydatepicker';
 
 @NgModule({
   declarations: [
@@ -27,9 +28,10 @@ import { UrlShortenerComponent } from './url-shortener/url-shortener.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    MyDatePickerModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [UsersService , AuthResolverService],
+  providers: [UsersService , AuthResolverService, UrlShortenerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

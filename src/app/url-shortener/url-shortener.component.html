@@ -1,23 +1,19 @@
 <div class="main-container">
 <div class="sub-container">
-  <!--<div class="container-fluid">-->
-    <!--<div class="row">-->
 
-      <!--<div class="col-lg-12 col-sm-12 col-md-12">-->
-        <form>
+        <form (ngSubmit)="generateShortUrl(shortUrlForm.value)" #shortUrlForm="ngForm">
           <div class="form-group">
 
-            <label for="i_name" class="form-label">Name</label>
-            <input type="text" class="form-control flat_input input-lg" name="i_name" id="i_name"  required
-                   placeholder="Enter category name here..."  >
+            <label for="url" class="form-label">Url</label>
+            <input type="url" class="form-control flat_input input-lg" (ngModel)="longUrl" name="url" id="url"  required
+                   placeholder="Enter a long URL to make tiny..."  >
           </div>
+          <my-date-picker name="mydate" [options]="myDatePickerOptions" [placeholder]="datePickerPlaceholder"
+                          [(ngModel)]="dateModel" required></my-date-picker>
           <div class="text-center">
-          <button type="submit" class="btn btn_yellow btn-lg"><span>save</span></button>
+          <button type="submit" class="btn btn-primary btn-lg"><span>generate url</span></button>
           </div>
         </form>
-      <!--</div>-->
-    <!--</div>-->
 
-  <!--</div>-->
 </div>
 </div>
