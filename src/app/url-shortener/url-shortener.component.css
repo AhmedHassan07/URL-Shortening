@@ -1,0 +1,15 @@
+.main-container{
+  display: table;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 500px;
+  height: 100%;
+  margin: 0 auto;
+}
+.sub-container{
+  display: table-cell;
+  vertical-align: middle;
+}

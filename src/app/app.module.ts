@@ -6,40 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule,  } from '@angular/router';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
-
-import  { UsersService } from './users.service';
+import { appRoutes } from './routes';
+import { UsersService } from './users.service';
 import { AuthResolverService } from './auth-resolver.service';
-import { CoursesComponent } from './courses/courses.component';
+import { UrlShortenerComponent } from './url-shortener/url-shortener.component';
 
-const routes: Routes = [
-  {
-    path : 'login',
-    component : SigninComponent,
-    resolve: {
-      user: AuthResolverService
-    }
-  }, {
-    path : 'signup',
-    component : SignupComponent,
-    resolve: {
-      user: AuthResolverService
-    }
-  }, {
-    path : 'course',
-    component : CoursesComponent,
-    resolve: {
-      user: AuthResolverService
-    }
-  },
-  {
-    path : '',
-    redirectTo : 'login',
-    pathMatch : 'full'
-  }
-]
 
 @NgModule({
   declarations: [
@@ -47,13 +21,13 @@ const routes: Routes = [
     HeaderComponent,
     SigninComponent,
     SignupComponent,
-    CoursesComponent
+    UrlShortenerComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [UsersService , AuthResolverService],
   bootstrap: [AppComponent]
