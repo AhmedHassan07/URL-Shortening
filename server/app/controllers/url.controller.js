@@ -10,7 +10,7 @@ const urlHelper = require('../helpers/url.helper'),
 
 
 const create = (req, res) => {
-  return urlHelper.createUrl(req.body, req.get('host'))
+  return urlHelper.createUrl(req.body, req.protocol + '://' + req.get('host'))
     .then((data) => {
       return generalController.successResponse(res, "Url created successfully!", data, "url.controller.create");
     }).catch(StandardError, (err) => {
@@ -26,9 +26,9 @@ const redirectPage = (req, res) => {
     .then((data) => {
       return res.redirect(data);
     }).catch(StandardError, (err) => {
-      return res.sendFile(path.join(__dirname, '../../../dist/index.html'));
+      return res.redirect('/');
     }).catch((err) => {
-      return res.sendFile(path.join(__dirname, '../../../dist/index.html'));
+      return res.redirect('/');
     });
 
 }

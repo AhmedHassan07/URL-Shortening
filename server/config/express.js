@@ -3,7 +3,7 @@
  */
 'use strict';
 
-var express = require('express'),
+const express = require('express'),
     path = require('path'),
     logger = require('morgan'),
     cookieParser = require('cookie-parser'),
@@ -11,8 +11,11 @@ var express = require('express'),
     sessionMiddleware = require('./session'),
     glob = require('glob'),
     passport = require('./passport'),
+    Ddos = require('ddos'),
+    helmet = require('helmet'),
     app = express();
 
+let ddos = new Ddos({brunt:10, limit:15});
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -23,6 +26,8 @@ app.use(express.static(path.join(__dirname, './../../node_modules')));
 app.use(sessionMiddleware);
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(ddos.express);
+app.use(helmet());
 
 glob("server/**/*.routes.js", function (err, files) {
 
@@ -47,9 +52,5 @@ glob("server/**/*.routes.js", function (err, files) {
   });
 
 });
-
-
-
-
 
 module.exports = app;

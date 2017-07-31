@@ -1,12 +1,14 @@
 "use strict";
 const generalMiddelware = require('./general.middleware'),
-      _ = require('lodash');
+      _ = require('lodash'),
+      shortid = require('shortid');
 
 const createHandler = (req, res, next) => {
 
-  console.log(req.body.url)
-  let urlObj = {
-    orignalUrl : _.trim(req.body.url)
+  const urlObj = {
+    orignalUrl : _.trim(req.body.url),
+    expiresAt : req.body.expiresAt ||  new Date(+new Date() + 7 * 24 * 60 * 60 * 1000),
+    shortUrl : shortid.generate()
   };
   if(!urlObj.orignalUrl){
     return generalMiddelware.standardErrorResponse(res, 'Please provide url', 'url.middleware.create', 200)

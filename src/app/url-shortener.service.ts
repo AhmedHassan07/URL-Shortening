@@ -12,7 +12,7 @@ export class UrlShortenerService {
   }
 
 
-  shortenUrl(body): Observable<any[]> {
+  shortenUrl(body): Observable<any> {
 
     // ...using post request
 

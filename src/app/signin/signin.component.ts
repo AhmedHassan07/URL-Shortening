@@ -20,7 +20,7 @@ export class SigninComponent implements OnInit {
     this.userService.login(values)
       .subscribe((data) => {
         if(data){
-          this.router.navigate(['course'])
+          this.router.navigate([''])
         }
       })
   }

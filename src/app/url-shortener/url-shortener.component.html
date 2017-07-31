@@ -1,19 +1,60 @@
 <div class="main-container">
-<div class="sub-container">
+  <div class="sub-container">
 
+    <div class="container-fluid">
+      <div class="row">
         <form (ngSubmit)="generateShortUrl(shortUrlForm.value)" #shortUrlForm="ngForm">
-          <div class="form-group">
+
+          <div class="form-group col-lg-9 col-md-9">
 
             <label for="url" class="form-label">Url</label>
-            <input type="url" class="form-control flat_input input-lg" (ngModel)="longUrl" name="url" id="url"  required
-                   placeholder="Enter a long URL to make tiny..."  >
+            <input type="url" class="form-control  input-lg" [(ngModel)]="longUrl" name="url" id="url" required
+                   #url="ngModel"
+                   placeholder="Enter a long URL to make tiny..." pattern="https?://.+">
+            <div *ngIf="url.errors && (url.dirty || url.touched)" [hidden]="!url.errors.pattern"
+                 class="alert alert-danger">
+              <div>
+                Must be a valid URL!
+              </div>
+            </div>
           </div>
-          <my-date-picker name="mydate" [options]="myDatePickerOptions" [placeholder]="datePickerPlaceholder"
-                          [(ngModel)]="dateModel" required></my-date-picker>
-          <div class="text-center">
-          <button type="submit" class="btn btn-primary btn-lg"><span>generate url</span></button>
+          <div class="form-group col-lg-3 col-md-3">
+            <label for="expDate" class="form-label">Url expiry date</label>
+            <my-date-picker name="mydate" id="expDate" [placeholder]="dpPlaceholder"
+                            [(ngModel)]="dateModel" required></my-date-picker>
+            <div *ngIf="formError"
+                 class="alert alert-danger">
+              <div>
+                {{formErrorMsg}}
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center col-lg-12 col-md-12">
+            <button type="submit" class="btn btn-primary btn-lg" [disabled]="!shortUrlForm.valid">
+              <span>Generate url</span></button>
           </div>
         </form>
+      </div>
 
-</div>
+      <div class="row" *ngIf="isGenerated">
+        <div class="col-lg-2 col-md-2"></div>
+        <div class="col-lg-8 col-md-8">
+          <h4>Generated url is <b><a href="{{genertedUrl}}" target="_blank">{{genertedUrl}}</a></b></h4>
+
+        </div>
+        <div class="col-lg-2 col-md-2"></div>
+
+
+      </div>
+
+
+    </div>
+
+    <div class="">
+
+    </div>
+
+
+  </div>
 </div>
