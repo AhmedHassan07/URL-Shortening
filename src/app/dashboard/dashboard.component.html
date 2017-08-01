@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+
+
+      <div>
+        <h3>
+          Links
+        </h3>
+        <ngx-datatable
+          class="material"
+          [rows]="rows"
+          [columns]="[{name:'orignalUrl'},{name:'shortUrl'},{name:'count'}]"
+          [columnMode]="'force'"
+          [headerHeight]="50"
+          [footerHeight]="50"
+          [rowHeight]="'auto'"
+          [externalPaging]="true"
+          [count]="page.totalElements"
+          [offset]="page.pageNumber"
+          [limit]="page.size"
+          (page)='setPage($event)'>
+        </ngx-datatable>
+      </div>
+    </div>
+  </div>
+
+</div>

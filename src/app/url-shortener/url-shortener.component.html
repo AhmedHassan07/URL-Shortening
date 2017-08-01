@@ -1,0 +1,64 @@
+
+<div class="main-container">
+
+  <div class="sub-container">
+    <h1>Short url generator</h1>
+
+    <div class="container-fluid form-container">
+
+      <div class="row">
+        <form (ngSubmit)="generateShortUrl(shortUrlForm.value)" #shortUrlForm="ngForm">
+
+          <div class="form-group col-lg-9 col-md-9">
+
+
+            <input type="url" class="form-control  input-lg" [(ngModel)]="longUrl" name="url" id="url" required
+                   #url="ngModel" value="http://"
+                   placeholder="Enter a long URL to make tiny..." pattern="https?://.+">
+            <div *ngIf="url.errors && (url.dirty || url.touched)" [hidden]="!url.errors.pattern"
+                 class="alert alert-danger">
+              <div>
+                Must be a valid URL!
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-lg-3 col-md-3">
+
+            <my-date-picker name="mydate" id="expDate" [placeholder]="dpPlaceholder"
+                            [(ngModel)]="dateModel" required></my-date-picker>
+            <div *ngIf="formError"
+                 class="alert alert-danger">
+              <div>
+                {{formErrorMsg}}
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center col-lg-12 col-md-12">
+            <button type="submit" class="btn btn-primary btn-lg orange-btn" [disabled]="!shortUrlForm.valid">
+              <span>Shorten</span></button>
+          </div>
+        </form>
+      </div>
+
+      <div class="row generted-url" *ngIf="isGenerated">
+        <div class="col-lg-2 col-md-2"></div>
+        <div class="col-lg-8 col-md-8">
+          <h4 class="">Shortened url is <b><a href="{{genertedUrl}}" target="_blank">{{genertedUrl}}</a></b></h4>
+
+        </div>
+        <div class="col-lg-2 col-md-2"></div>
+
+
+      </div>
+
+
+    </div>
+
+    <div class="">
+
+    </div>
+
+
+  </div>
+</div>

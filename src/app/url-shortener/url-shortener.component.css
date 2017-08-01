@@ -1,0 +1,57 @@
+.main-container {
+  display: table;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 700px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.sub-container {
+  display: table-cell;
+  /*vertical-align: middle;*/
+}
+.form-container{
+  margin-top: 110px;
+}
+.sub-container >  h1 {
+  padding-top: 33%;
+  text-align: center;
+  font-family: cursive;
+  color: #478fd0;
+  font-size: 48px;
+}
+.generted-url{
+  margin-top: 10px;
+}
+.input-lg{
+  border-radius: 20px;
+}
+.orange-btn{
+  border: none;
+  background-color: #f05434;
+  color: #ffffff;
+  width: 160px;
+  border-radius: 23px;
+}
+.orange-btn:hover,
+.orange-btn:focus,
+.orange-btn:active,
+.orange-btn.active {
+  border: none;
+  background-color: #f05434;
+  color: #ffffff;
+  width: 160px;
+  border-radius: 23px;
+}
+
+.mydp, .mydp .headertodaybtn{
+  margin-left: -21px;
+  width: 100%;
+  margin-top: -2px;
+  height: 46px;
+  border-radius: 30px;
+}
