@@ -1,7 +1,7 @@
 
 # URL-Shortening
 
-#Getting Started
+# Getting Started
 
 First clone or download the repo to your computer.
 
@@ -13,33 +13,33 @@ Wire up the database connection found in /server/config/env/development.json.
 run ng build to build angular project and then npm start to start server.
 Thats all! Now go and open up your browser at http://localhost:3000
 
-#Prerequisites
+# Prerequisites
 
 - Node.js - Download and Install Node.js. 
 - Angular-cli - Download and Install Angular/cli.
 - Mongodb - Download and Install Mongodb.
 
-#Tool Prerequisites
+# Tool Prerequisites
 
 NPM - Node.js package manager, should be installed when you install node.js. NPM (Node Package Manager) will look at the package.json file in the root of the project and download all of the necessary dependencies and put them in a folder called node_modules
 
-#NPM Modules Used
+# NPM Modules Used
 
 - Passport - Passport is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based web application. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more.
 - Express - Express is a minimal and flexible node.js web application framework, providing a robust set of features for building single and multi-page, and hybrid web applications.
 - Mongoose - NoSql Database
 
-#Front-End Tools Used
+# Front-End Tools Used
 
 - Angular - Angular is an open-source JavaScript framework, maintained by Google, that assists with running single-page applications.
 - Twitter Bootstrap - Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.
 
 
-#Purpose
+# Purpose
 
 To generate a short url from a long url and redirect to longurl when short url is hit.
 
-#Design Decisions
+# Design Decisions
 
 - Mongodb is used for persistent storage. Hashmap is used to cache links. It would be more efficient if we use Redis for persistent storage and also for cache.
 - Url expiry time is to be set while generating url.
