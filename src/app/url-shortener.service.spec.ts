@@ -1,6 +1,6 @@
-import { TestBed, inject } from '@angular/core/testing';
+import {TestBed, inject} from '@angular/core/testing';
 
-import { UrlShortenerService } from './url-shortener.service';
+import {UrlShortenerService} from './url-shortener.service';
 
 describe('UrlShortenerService', () => {
   beforeEach(() => {

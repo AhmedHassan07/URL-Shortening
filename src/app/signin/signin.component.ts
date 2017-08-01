@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { UsersService } from '../users.service';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {UsersService} from '../users.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class SigninComponent implements OnInit {
 
-  constructor(private userService : UsersService, private router:Router) { }
+  constructor(private userService: UsersService, private router: Router) {
+  }
 
 
   ngOnInit() {
@@ -19,7 +20,7 @@ export class SigninComponent implements OnInit {
 
     this.userService.login(values)
       .subscribe((data) => {
-        if(data){
+        if (data) {
           this.router.navigate([''])
         }
       })

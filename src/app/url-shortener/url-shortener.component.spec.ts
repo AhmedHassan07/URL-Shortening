@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { UrlShortenerComponent } from './url-shortener.component';
+import {UrlShortenerComponent} from './url-shortener.component';
 
 describe('UrlShortenerComponent', () => {
   let component: UrlShortenerComponent;
@@ -8,9 +8,9 @@ describe('UrlShortenerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UrlShortenerComponent ]
+      declarations: [UrlShortenerComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

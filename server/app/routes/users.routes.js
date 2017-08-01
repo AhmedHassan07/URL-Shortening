@@ -5,16 +5,14 @@
 
 module.exports = function usersRoutes(app, api) {
 
-  var users = require('../controllers/users'),
+  let users = require('../controllers/users'),
     userMiddleWare = require('../middlewares/users');
 
   // Setting up the users api
-  app.post(api + '/users/create',userMiddleWare.verifyUserAttributes,  users.createUser);
+  app.post(api + '/users/create', userMiddleWare.verifyUserAttributes, users.createUser);
 
-  app.post(api + '/users/login',users.login);
+  app.post(api + '/users/login', users.login);
   app.get(api + '/signout', users.signout);
-  app.get(api+'/users/me', users.me);
-
-
+  app.get(api + '/users/me', users.me);
 
 };

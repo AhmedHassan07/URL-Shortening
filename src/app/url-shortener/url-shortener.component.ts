@@ -30,7 +30,7 @@ export class UrlShortenerComponent implements OnInit {
       url: values.url,
       expiresAt: values.mydate ? values.mydate.formatted : new Date(+new Date() + 7 * 24 * 60 * 60 * 1000)
     };
-    if (new Date(shortnerObj.expiresAt) <= new Date()){
+    if (new Date(shortnerObj.expiresAt) <= new Date()) {
       this.formErrorMsg = 'Please provide expiration time greater than today.';
       this.formError = true;
       return;

@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { LinkExpiredComponent } from './link-expired.component';
+import {LinkExpiredComponent} from './link-expired.component';
 
 describe('LinkExpiredComponent', () => {
   let component: LinkExpiredComponent;
@@ -8,9 +8,9 @@ describe('LinkExpiredComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LinkExpiredComponent ]
+      declarations: [LinkExpiredComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

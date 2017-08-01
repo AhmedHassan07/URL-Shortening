@@ -8,7 +8,7 @@ import {DashboardService} from './dashboard.service';
 })
 export class DashboardComponent implements OnInit {
 
-  private page = {pageNumber : 0, size : 20, totalElements: 0};
+  private page = {pageNumber: 0, size: 20, totalElements: 0};
   private rows = [];
 
   constructor(private DashboardService: DashboardService) {
@@ -20,10 +20,6 @@ export class DashboardComponent implements OnInit {
     this.setPage({offset: 0});
   }
 
-  /**
-   * Populate the table with new data based on the page number
-   * @param page The page to select
-   */
   setPage(pageInfo) {
     this.page.pageNumber = pageInfo.offset * this.page.size;
     this.DashboardService.getLinks(this.page.size, this.page.pageNumber).subscribe(res => {

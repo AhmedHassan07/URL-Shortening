@@ -59,14 +59,12 @@ module.exports = function(callback) {
 
             glob("server/**/*.models.js", function (err, files) {
 
-              console.log(files)
                 if(err) {
                     modelsCb(err);
                 }
                 else {
                     winston.info('models are loading ...');
                     files.forEach(function(file){
-                      console.log(file)
                         require(path.join(__dirname,'../../',file));
                         winston.info(file, 'is loaded');
                     });

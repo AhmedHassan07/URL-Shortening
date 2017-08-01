@@ -3,17 +3,17 @@
  */
 
 var validator = require('validator');
-    // sendErrorResponse = require('./general.middleware').;
+// sendErrorResponse = require('./general.middleware').;
 
 
 function verifyUserAttributes(req, res, next) {
 
   var input = req.body,
-      userObj = {
-        userName : validator.trim(input.userName),
-        email : validator.trim(input.email),
-        password : validator.trim(input.password)
-      };
+    userObj = {
+      userName: validator.trim(input.userName),
+      email: validator.trim(input.email),
+      password: validator.trim(input.password)
+    };
 
   if (validator.isEmpty(userObj.userName)) {
     // return sendErrorResponse(res, 406, "Please provide user name");
@@ -28,5 +28,5 @@ function verifyUserAttributes(req, res, next) {
 }
 
 module.exports = {
-  verifyUserAttributes : verifyUserAttributes
+  verifyUserAttributes: verifyUserAttributes
 }

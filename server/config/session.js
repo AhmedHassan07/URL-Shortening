@@ -8,9 +8,6 @@ var session = require('express-session'),
     mongoose = require('mongoose');
 
 
-
-
-
 var sessionMiddleware = session({
     resave : true,
     saveUninitialized: true,

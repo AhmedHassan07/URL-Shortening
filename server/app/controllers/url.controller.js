@@ -14,7 +14,7 @@ const create = (req, res) => {
     .then((data) => {
       return generalController.successResponse(res, "Url created successfully!", data, "url.controller.create");
     }).catch(StandardError, (err) => {
-     return generalController.errorResponse(res, err, null, "url.controller.create", 403);
+      return generalController.errorResponse(res, err, null, "url.controller.create", 403);
     }).catch((err) => {
       return generalController.errorResponse(res, err, "Could not create url!", "url.controller.create", 403);
     });

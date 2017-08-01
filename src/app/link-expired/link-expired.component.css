@@ -1,4 +1,4 @@
-.main-container{
+.main-container {
   display: table;
   position: absolute;
   top: 0;
@@ -9,7 +9,8 @@
   height: 100%;
   margin: 0 auto;
 }
-.sub-container{
+
+.sub-container {
   display: table-cell;
   vertical-align: middle;
 }
