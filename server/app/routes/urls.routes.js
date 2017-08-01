@@ -11,7 +11,10 @@ module.exports = function (app, api) {
     .post(urlMiddleWare.createHandler, url.create);
 
   app.route('/:shortUrl')
-    .get(url.redirectPage)
+    .get(url.redirectPage);
+
+  app.route(api + '/get-url/limit/:limit/offset/:offset')
+    .get(url.getLinks)
 
 
 };

@@ -14,9 +14,9 @@ const create = (req, res) => {
     .then((data) => {
       return generalController.successResponse(res, "Url created successfully!", data, "url.controller.create");
     }).catch(StandardError, (err) => {
-      generalController.errorResponse(res, err, null, "url.controller.create", 500);
+     return generalController.errorResponse(res, err, null, "url.controller.create", 403);
     }).catch((err) => {
-      return generalController.errorResponse(res, err, "Could not create url!", "url.controller.create", 500);
+      return generalController.errorResponse(res, err, "Could not create url!", "url.controller.create", 403);
     });
 
 }
@@ -31,9 +31,21 @@ const redirectPage = (req, res) => {
       return res.sendFile(path.join(__dirname, '../../../dist/index.html'));
     });
 
-}
+};
+const getLinks = (req, res) => {
+  return urlHelper.getLinks(req.params)
+    .then((data) => {
+      return generalController.successResponse(res, "Links fetched successfully!", data, "url.controller.getLinks");
+    }).catch(StandardError, (err) => {
+      return generalController.errorResponse(res, err, null, "url.controller.getLinks", 403);
+    }).catch((err) => {
+      return generalController.errorResponse(res, err, "Could not create url!", "url.controller.getLinks", 403);
+    });
+
+};
 
 module.exports = {
   create,
-  redirectPage
-}
+  redirectPage,
+  getLinks
+};
