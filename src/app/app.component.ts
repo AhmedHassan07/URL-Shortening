@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UsersService } from './users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  constructor(private auth : UsersService, private router:Router){}
+
+  //ngOnInit(){
+  //  this.auth.checkAuthenticationStatus().subscribe((data) => {
+  //
+  //    if(data){
+  //      this.router.navigate(['course'])
+  //    }
+  //
+  //  })
+  //}
+
 }
